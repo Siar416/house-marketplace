@@ -78,7 +78,7 @@ function SignIn() {
             />
           </div>
 
-          <Link to="/forgot-passwords" className="forgotPasswordLink">
+          <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
 
