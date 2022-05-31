@@ -66,61 +66,59 @@ function SignUp() {
           <p className="pageHeader">Welcome Back!</p>
         </header>
 
-        <main>
-          <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
+          <input
+            type="text"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={onChange}
+            className="nameInput"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            value={email}
+            onChange={onChange}
+            className="emailInput"
+          />
+
+          <div className="passwordInputDiv">
             <input
-              type="text"
-              placeholder="Name"
-              id="name"
-              value={name}
+              type={showPassword ? "text" : "password"}
+              className="passwordInput"
+              placeholder="Password"
+              id="password"
+              value={password}
               onChange={onChange}
-              className="nameInput"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              value={email}
-              onChange={onChange}
-              className="emailInput"
             />
 
-            <div className="passwordInputDiv">
-              <input
-                type={showPassword ? "text" : "password"}
-                className="passwordInput"
-                placeholder="Password"
-                id="password"
-                value={password}
-                onChange={onChange}
-              />
+            <img
+              src={visibilityIcon}
+              alt="show password"
+              className="showPassword"
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
+          </div>
 
-              <img
-                src={visibilityIcon}
-                alt="show password"
-                className="showPassword"
-                onClick={() => setShowPassword((prevState) => !prevState)}
-              />
-            </div>
-
-            <Link to="/forgot-passwords" className="forgotPasswordLink">
-              Forgot Password
-            </Link>
-
-            <div className="signUpBar">
-              <p className="signUpText">Sign Up</p>
-              <button className="signUpButton">
-                <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
-              </button>
-            </div>
-          </form>
-
-          {/* Google OAuth */}
-
-          <Link to="/sign-in" className="registerLink">
-            Sign In Instead
+          <Link to="/forgot-passwords" className="forgotPasswordLink">
+            Forgot Password
           </Link>
-        </main>
+
+          <div className="signUpBar">
+            <p className="signUpText">Sign Up</p>
+            <button className="signUpButton">
+              <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
+            </button>
+          </div>
+        </form>
+
+        {/* Google OAuth */}
+
+        <Link to="/sign-in" className="registerLink">
+          Sign In Instead
+        </Link>
       </div>
     </>
   );
