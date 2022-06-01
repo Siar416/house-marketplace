@@ -81,6 +81,8 @@ function CreateListing() {
     let location;
 
     if (geolocationEnabled) {
+      // code setup to get coords with geocoding api - however I'm not using it - could need to include api
+      // key in below fetch url along with adding .env file to hold api key and add .env to .gitingore
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}`
       );
